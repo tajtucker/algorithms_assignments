@@ -35,3 +35,4 @@ for size in sizes:
     print(f"\nDataset Size: {size}")
     for algo in algorithms:
         print(dataset_time(algo, data))
+        print()
