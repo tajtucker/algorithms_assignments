@@ -1,5 +1,6 @@
 import time
 import random
+from counting_sort import counting_sort
 from insertion_sort import insertion_sort
 
 def generate_dataset(size):
@@ -21,4 +22,4 @@ sizes = [10000, 50000, 100000, 500000, 1000000]
 for size in sizes:
     data = generate_dataset(size)
     print(f"\nDataset Size: {size}")
-    print(dataset_time(insertion_sort, data))
+    print(dataset_time(counting_sort, data))
