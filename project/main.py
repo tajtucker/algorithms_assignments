@@ -4,6 +4,7 @@ from counting_sort import counting_sort
 from quick_sort import quick_sort
 from insertion_sort import insertion_sort
 from merge_sort import merge_sort
+from heap_sort import heap_sort
 
 def generate_dataset(size):
     return [random.randint(1, 999998) for _ in range(size)]
@@ -24,4 +25,4 @@ sizes = [10000, 50000, 100000, 500000, 1000000]
 for size in sizes:
     data = generate_dataset(size)
     print(f"\nDataset Size: {size}")
-    print(dataset_time(merge_sort, data))
+    print(dataset_time(heap_sort, data))
