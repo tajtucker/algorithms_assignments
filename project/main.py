@@ -1,0 +1,24 @@
+import time
+import random
+from insertion_sort import insertion_sort
+
+def generate_dataset(size):
+    return [random.randint(1, 999998) for _ in range(size)]
+
+def dataset_time(algo, data):
+    times=[]
+    for i in range(3):
+        start = time.perf_counter()
+        algo(data.copy())
+        end = time.perf_counter()
+        times.append(end-start)
+        print(f"Run {i+1} for {algo.__name__}: {end - start:.6f} seconds")
+    avg = sum(times) / len(times)
+    return f"Average time of {algo.__name__}: {avg:.6f} seconds"
+
+
+sizes = [10000, 50000, 100000, 500000, 1000000]
+for size in sizes:
+    data = generate_dataset(size)
+    print(f"\nDataset Size: {size}")
+    print(dataset_time(insertion_sort, data))
